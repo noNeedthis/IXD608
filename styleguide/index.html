@@ -1,808 +1,145 @@
-<```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Peak Lineup — Styleguide</title>
-
-<style>
-
-/* =========================================================
-   PEAK LINEUP STYLEGUIDE
-   ========================================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-:root {
-    --black: #111111;
-    --dark: #292929;
-    --medium: #777777;
-    --light: #F2F2F0;
-    --white: #FFFFFF;
-
-    --primary: #0B5C5A;
-    --primary-dark: #064543;
-    --primary-light: #DDECE9;
-
-    --accent: #E8B44B;
-
-    --border: #D9D9D5;
-
-    --radius: 12px;
-    --radius-small: 7px;
-
-    --max-width: 1440px;
-}
-
-/* ---------------------------------------------------------
-   RESET
-   --------------------------------------------------------- */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Inter', Arial, sans-serif;
-    background: var(--white);
-    color: var(--black);
-    line-height: 1.5;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-button,
-input,
-select {
-    font: inherit;
-}
-
-/* ---------------------------------------------------------
-   NAVIGATION
-   --------------------------------------------------------- */
-
-.topbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    height: 72px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 5vw;
-
-    background: rgba(255,255,255,0.96);
-    border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(12px);
-}
-
-.logo {
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-}
-
-.logo span {
-    color: var(--primary);
-}
-
-.nav {
-    display: flex;
-    gap: 28px;
-    align-items: center;
-}
-
-.nav a {
-    color: var(--dark);
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 500;
-}
-
-.nav a:hover {
-    color: var(--primary);
-}
-
-/* ---------------------------------------------------------
-   HERO
-   --------------------------------------------------------- */
-
-.hero {
-    min-height: 580px;
-
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-
-    background: var(--dark);
-    color: white;
-}
-
-.hero-content {
-    padding: 110px 8vw;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.eyebrow {
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: .16em;
-    margin-bottom: 22px;
-    color: var(--primary-light);
-}
-
-.hero h1 {
-    font-size: clamp(54px, 7vw, 110px);
-    line-height: .88;
-    letter-spacing: -.065em;
-    margin-bottom: 30px;
-}
-
-.hero h1 span {
-    color: var(--accent);
-}
-
-.hero-description {
-    max-width: 620px;
-    color: #D8D8D8;
-    font-size: 16px;
-}
-
-.hero-mark {
-    background:
-        linear-gradient(135deg, rgba(11,92,90,.95), rgba(6,69,67,.95)),
-        #0B5C5A;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 580px;
-}
-
-.peak-symbol {
-    width: 230px;
-    height: 230px;
-
-    border: 3px solid white;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transform: rotate(45deg);
-}
-
-.peak-symbol span {
-    transform: rotate(-45deg);
-
-    font-size: 44px;
-    font-weight: 700;
-    letter-spacing: -.08em;
-}
-
-/* ---------------------------------------------------------
-   MAIN
-   --------------------------------------------------------- */
-
-main {
-    max-width: var(--max-width);
-    margin: 0 auto;
-}
-
-.section {
-    padding: 110px 7vw;
-    border-bottom: 1px solid var(--border);
-}
-
-.section-header {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 60px;
-    margin-bottom: 70px;
-}
-
-.section-number {
-    color: var(--primary);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: .1em;
-}
-
-.section-title {
-    font-size: clamp(38px, 5vw, 68px);
-    line-height: .95;
-    letter-spacing: -.055em;
-}
-
-/* ---------------------------------------------------------
-   STATEMENT
-   --------------------------------------------------------- */
-
-.statement-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 70px;
-}
-
-.statement h3 {
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: .12em;
-    margin-bottom: 22px;
-    color: var(--primary);
-}
-
-.statement p {
-    font-size: 20px;
-    line-height: 1.45;
-    color: var(--dark);
-}
-
-.uvp {
-    background: var(--light);
-    padding: 40px;
-    border-radius: var(--radius);
-}
-
-.uvp p {
-    font-size: 18px;
-}
-
-/* ---------------------------------------------------------
-   TYPOGRAPHY
-   --------------------------------------------------------- */
-
-.font-demo {
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-}
-
-.font-header {
-    padding: 22px 26px;
-    background: var(--light);
-    border-bottom: 1px solid var(--border);
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.font-name {
-    font-size: 28px;
-    font-weight: 500;
-}
-
-.font-note {
-    color: var(--medium);
-    font-size: 12px;
-}
-
-.type-row {
-    display: grid;
-    grid-template-columns: 1fr 160px 100px 2fr;
-    gap: 20px;
-
-    padding: 28px;
-
-    border-bottom: 1px solid var(--border);
-    align-items: center;
-}
-
-.type-row:last-child {
-    border-bottom: none;
-}
-
-.type-label {
-    color: var(--medium);
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: .08em;
-}
-
-.type-example {
-    color: var(--black);
-}
-
-.type-example.heading {
-    font-size: 24px;
-    font-weight: 700;
-}
-
-.type-example.controls {
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.type-example.body {
-    font-size: 12px;
-}
-
-.type-meta {
-    font-size: 12px;
-    color: var(--medium);
-}
-
-/* ---------------------------------------------------------
-   COLORS
-   --------------------------------------------------------- */
-
-.color-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.color-card {
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-}
-
-.color-swatch {
-    height: 190px;
-}
-
-.color-info {
-    padding: 20px;
-}
-
-.color-info strong {
-    display: block;
-    margin-bottom: 6px;
-}
-
-.color-info span {
-    color: var(--medium);
-    font-size: 12px;
-}
-
-.swatch-light {
-    background: #F2F2F0;
-}
-
-.swatch-medium {
-    background: #777777;
-}
-
-.swatch-dark {
-    background: #292929;
-}
-
-.swatch-primary {
-    background: #0B5C5A;
-}
-
-.swatch-primary-light {
-    background: #DDECE9;
-}
-
-.swatch-accent {
-    background: #E8B44B;
-}
-
-/* ---------------------------------------------------------
-   WIREFRAMES
-   --------------------------------------------------------- */
-
-.wireframe {
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 30px;
-    background: #FAFAF8;
-}
-
-.wireframe-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-}
-
-.phone {
-    background: white;
-    border: 1px solid #CCC;
-    border-radius: 22px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,.07);
-}
-
-.phone-top {
-    height: 30px;
-    background: var(--dark);
-}
-
-.phone-body {
-    min-height: 440px;
-    padding: 18px;
-}
-
-.fake-nav {
-    height: 30px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 25px;
-}
-
-.fake-block {
-    background: #E7E7E4;
-    border-radius: 6px;
-    margin-bottom: 12px;
-}
-
-.fake-block.large {
-    height: 130px;
-}
-
-.fake-block.medium {
-    height: 70px;
-}
-
-.fake-block.small {
-    height: 35px;
-}
-
-.fake-button {
-    height: 42px;
-    background: var(--primary);
-    border-radius: 7px;
-    margin-top: 25px;
-}
-
-/* ---------------------------------------------------------
-   USER FLOW
-   --------------------------------------------------------- */
-
-.flow {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-}
-
-.flow-step {
-    flex: 1;
-
-    min-height: 130px;
-
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-
-    padding: 25px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    background: white;
-}
-
-.flow-step strong {
-    font-size: 18px;
-}
-
-.flow-step span {
-    color: var(--medium);
-    font-size: 12px;
-}
-
-.flow-arrow {
-    font-size: 24px;
-    color: var(--primary);
-}
-
-/* ---------------------------------------------------------
-   ICONOGRAPHY
-   --------------------------------------------------------- */
-
-.icon-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-}
-
-.icon-card {
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 30px;
-
-    text-align: center;
-
-    background: white;
-}
-
-.icon {
-    width: 52px;
-    height: 52px;
-
-    margin: 0 auto 18px;
-
-    border: 2px solid var(--dark);
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 21px;
-}
-
-.icon-card span {
-    font-size: 12px;
-    color: var(--medium);
-}
-
-/* ---------------------------------------------------------
-   PRODUCT UI
-   --------------------------------------------------------- */
-
-.ui-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
-}
-
-.ui-card {
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    background: white;
-}
-
-.ui-card-header {
-    padding: 18px 22px;
-    border-bottom: 1px solid var(--border);
-    background: var(--light);
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.ui-card-header strong {
-    font-size: 13px;
-}
-
-.ui-card-body {
-    padding: 25px;
-}
-
-/* ---------------------------------------------------------
-   BOARD CARD
-   --------------------------------------------------------- */
-
-.board-card {
-    display: grid;
-    grid-template-columns: 170px 1fr;
-    gap: 25px;
-}
-
-.board-image {
-    min-height: 230px;
-
-    border-radius: 10px;
-
-    background:
-        linear-gradient(145deg, #D8D8D5, #F2F2F0);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.board-shape {
-    width: 35px;
-    height: 190px;
-
-    border-radius: 50%;
-
-    background: white;
-
-    transform: rotate(4deg);
-
-    box-shadow: 0 5px 20px rgba(0,0,0,.1);
-}
-
-.board-info h3 {
-    font-size: 24px;
-    margin-bottom: 8px;
-}
-
-.rating {
-    font-size: 13px;
-    margin-bottom: 22px;
-}
-
-.details {
-    font-size: 12px;
-    color: var(--medium);
-    line-height: 1.8;
-    margin-bottom: 18px;
-}
-
-.review {
-    padding: 16px;
-
-    background: var(--light);
-
-    border-radius: 8px;
-
-    font-size: 12px;
-    margin-bottom: 18px;
-}
-
-.review-author {
-    margin-top: 10px;
-    font-weight: 600;
-}
-
-/* ---------------------------------------------------------
-   SHOP CARD
-   --------------------------------------------------------- */
-
-.shop-list {
-    display: flex;
-    flex-direction: column;
-}
-
-.shop {
-    padding: 18px 0;
-    border-bottom: 1px solid var(--border);
-
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 20px;
-}
-
-.shop:last-child {
-    border-bottom: none;
-}
-
-.shop h4 {
-    margin-bottom: 5px;
-}
-
-.shop p {
-    color: var(--medium);
-    font-size: 12px;
-}
-
-.shop-price {
-    text-align: right;
-    font-size: 12px;
-}
-
-/* ---------------------------------------------------------
-   SEARCH / LOCATION
-   --------------------------------------------------------- */
-
-.search-box {
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 25px;
-}
-
-.search-box h3 {
-    font-size: 25px;
-    margin-bottom: 20px;
-}
-
-.search-input {
-    display: flex;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.search-input input {
-    flex: 1;
-    border: none;
-    padding: 14px;
-    outline: none;
-}
-
-.search-input button {
-    border: none;
-    padding: 0 20px;
-    background: var(--primary);
-    color: white;
-    cursor: pointer;
-}
-
-/* ---------------------------------------------------------
-   CHECKOUT
-   --------------------------------------------------------- */
-
-.checkout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.form-field {
-    margin-bottom: 18px;
-}
-
-.form-field label {
-    display: block;
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 7px;
-}
-
-.form-field input {
-    width: 100%;
-    padding: 13px;
-
-    border: 1px solid var(--border);
-    border-radius: 7px;
-}
-
-.order-summary {
-    background: var(--light);
-    border-radius: var(--radius);
-    padding: 25px;
-}
-
-.order-line {
-    display: flex;
-    justify-content: space-between;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 13px;
-}
-
-.total {
-    font-size: 20px;
-    font-weight: 700;
-    padding-top: 20px;
-}
-
-/* ---------------------------------------------------------
-   FOOTER
-   --------------------------------------------------------- */
-
-footer {
-    background: var(--dark);
-    color: white;
-
-    padding: 70px 7vw;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.footer-logo {
-    font-size: 30px;
-    font-weight: 700;
-    letter-spacing: -.05em;
-}
-
-.footer-logo span {
-    color: var(--accent);
-}
-
-footer p {
-    color: #AAA;
-    font-size: 12px;
-}
-
-/* ---------------------------------------------------------
-   RESPONSIVE
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Style Guide — Peak Lineup</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">Peak Lineup</div>
+    <nav class="nav-links">
+      <a href="../">Home</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <div class="sg-header">
+      <h1>Course Style Guide</h1>
+      <p>Design system components, assets, typography, and user flows for Peak Lineup.</p>
+    </div>
+
+    <!-- Typography / Description Section -->
+    <section class="section">
+      <h2 class="section-title">Typography & Overview</h2>
+      <div class="sg-card-text">
+        <p>This style guide serves as the visual reference and design architecture for the Peak Lineup web experience.</p>
+        <p>All component styling relies on global, high-contrast layouts structured around monochromatic borders and clean, functional grid alignment.</p>
+      </div>
+    </section>
+
+    <!-- Color Palette Section -->
+    <section class="section">
+      <h2 class="section-title">Color Palette</h2>
+      <div class="sg-color-grid">
+        <div class="sg-swatch" style="background-color: #ffffff;">
+          <span>#FFFFFF</span>
+        </div>
+        <div class="sg-swatch" style="background-color: #000000; color: #ffffff;">
+          <span>#000000</span>
+        </div>
+        <div class="sg-swatch" style="background-color: #f0f0f0;">
+          <span>#F0F0F0</span>
+        </div>
+        <div class="sg-swatch" style="background-color: #444444; color: #ffffff;">
+          <span>#444444</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- System Specs Table -->
+    <section class="section">
+      <h2 class="section-title">Design Specifications</h2>
+      <table class="sg-table">
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>Specification</th>
+            <th>Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Border Radius</td>
+            <td>12px / 16px</td>
+            <td>Cards, containers, buttons</td>
+          </tr>
+          <tr>
+            <td>Primary Border</td>
+            <td>2px solid #000000</td>
+            <td>Main component outlines</td>
+          </tr>
+          <tr>
+            <td>Container Max-Width</td>
+            <td>1000px</td>
+            <td>Page layout boundary</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Icons Section -->
+    <section class="section">
+      <h2 class="section-title">Icons & Navigation Assets</h2>
+      <div class="sg-icon-grid">
+        <div class="sg-icon-item">
+          <img src="../img/qr-code.png" alt="QR Code" onerror="this.style.display='none'">
+          <span>QR Code</span>
+        </div>
+        <div class="sg-icon-item">
+          <img src="../img/icons/waves.png" alt="Waves" onerror="this.style.display='none'">
+          <span>Waves</span>
+        </div>
+        <div class="sg-icon-item">
+          <img src="../img/icons/surfboard.png" alt="Surfboard" onerror="this.style.display='none'">
+          <span>Surfboard</span>
+        </div>
+        <div class="sg-icon-item">
+          <img src="../img/icons/cart.png" alt="Cart" onerror="this.style.display='none'">
+          <span>Cart</span>
+        </div>
+        <div class="sg-icon-item">
+          <img src="../img/icons/user.png" alt="User" onerror="this.style.display='none'">
+          <span>User Profile</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wireframes / User Flow Section -->
+    <section class="section">
+      <h2 class="section-title">Wireframes / Layouts (User Flow)</h2>
+      <div class="sg-wireframe-grid">
+        <div class="sg-screen-card">
+          <span>Landing</span>
+          <div class="sg-phone-frame">Screen Mockup</div>
+        </div>
+        <div class="sg-screen-card">
+          <span>Product List</span>
+          <div class="sg-phone-frame">Screen Mockup</div>
+        </div>
+        <div class="sg-screen-card">
+          <span>Individual Item</span>
+          <div class="sg-phone-frame">Screen Mockup</div>
+        </div>
+        <div class="sg-screen-card">
+          <span>Cart Review</span>
+          <div class="sg-phone-frame">Screen Mockup</div>
+        </div>
+        <div class="sg-screen-card">
+          <span>Cart Checkout</span>
+          <div class="sg-phone-frame">Screen Mockup</div>
+        </div>
+        <div class="sg-screen-card">
+          <span>Purchase Confirmation</span>
+          <div class="sg-phone-frame">Screen Mockup</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
