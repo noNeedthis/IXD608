@@ -22,124 +22,43 @@
       <p>Design system components, assets, typography, and user flows for Peak Lineup.</p>
     </div>
 
-    <!-- Typography / Description Section -->
-    <section class="section">
-      <h2 class="section-title">Typography & Overview</h2>
-      <div class="sg-card-text">
-        <p>This style guide serves as the visual reference and design architecture for the Peak Lineup web experience.</p>
-        <p>All component styling relies on global, high-contrast layouts structured around monochromatic borders and clean, functional grid alignment.</p>
-      </div>
-    </section>
+    <!-- Font Section -->
+<section class="section sg-font-section">
+  <h2 class="sg-font-title">Font: Avenir</h2>
 
-    <!-- Color Palette Section -->
-    <section class="section">
-      <h2 class="section-title">Color Palette</h2>
-      <div class="sg-color-grid">
-        <div class="sg-swatch" style="background-color: #ffffff;">
-          <span>#FFFFFF</span>
-        </div>
-        <div class="sg-swatch" style="background-color: #000000; color: #ffffff;">
-          <span>#000000</span>
-        </div>
-        <div class="sg-swatch" style="background-color: #f0f0f0;">
-          <span>#F0F0F0</span>
-        </div>
-        <div class="sg-swatch" style="background-color: #444444; color: #ffffff;">
-          <span>#444444</span>
-        </div>
-      </div>
-    </section>
+  <table class="sg-font-table">
+    <thead>
+      <tr>
+        <th>UI Element</th>
+        <th>Weight</th>
+        <th>Size</th>
+        <th>Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Primary Headings Row -->
+      <tr class="row-primary">
+        <td class="col-element">Primary Headings</td>
+        <td class="col-weight">Bold</td>
+        <td class="col-size">24px</td>
+        <td class="col-purpose">Property titles, section headers, hero prices.</td>
+      </tr>
 
-    <!-- System Specs Table -->
-    <section class="section">
-      <h2 class="section-title">Design Specifications</h2>
-      <table class="sg-table">
-        <thead>
-          <tr>
-            <th>Element</th>
-            <th>Specification</th>
-            <th>Usage</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Border Radius</td>
-            <td>12px / 16px</td>
-            <td>Cards, containers, buttons</td>
-          </tr>
-          <tr>
-            <td>Primary Border</td>
-            <td>2px solid #000000</td>
-            <td>Main component outlines</td>
-          </tr>
-          <tr>
-            <td>Container Max-Width</td>
-            <td>1000px</td>
-            <td>Page layout boundary</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+      <!-- UI Controls & Subheads Row -->
+      <tr class="row-subheads">
+        <td class="col-element">UI Controls & Subheads</td>
+        <td class="col-weight">Medium</td>
+        <td class="col-size">16px</td>
+        <td class="col-purpose">Button text, search bar inputs, card titles, badges, navigation tabs.</td>
+      </tr>
 
-    <!-- Icons Section -->
-    <section class="section">
-      <h2 class="section-title">Icons & Navigation Assets</h2>
-      <div class="sg-icon-grid">
-        <div class="sg-icon-item">
-          <img src="../img/qr-code.png" alt="QR Code" onerror="this.style.display='none'">
-          <span>QR Code</span>
-        </div>
-        <div class="sg-icon-item">
-          <img src="../img/icons/waves.png" alt="Waves" onerror="this.style.display='none'">
-          <span>Waves</span>
-        </div>
-        <div class="sg-icon-item">
-          <img src="../img/icons/surfboard.png" alt="Surfboard" onerror="this.style.display='none'">
-          <span>Surfboard</span>
-        </div>
-        <div class="sg-icon-item">
-          <img src="../img/icons/cart.png" alt="Cart" onerror="this.style.display='none'">
-          <span>Cart</span>
-        </div>
-        <div class="sg-icon-item">
-          <img src="../img/icons/user.png" alt="User" onerror="this.style.display='none'">
-          <span>User Profile</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Wireframes / User Flow Section -->
-    <section class="section">
-      <h2 class="section-title">Wireframes / Layouts (User Flow)</h2>
-      <div class="sg-wireframe-grid">
-        <div class="sg-screen-card">
-          <span>Landing</span>
-          <div class="sg-phone-frame">Screen Mockup</div>
-        </div>
-        <div class="sg-screen-card">
-          <span>Product List</span>
-          <div class="sg-phone-frame">Screen Mockup</div>
-        </div>
-        <div class="sg-screen-card">
-          <span>Individual Item</span>
-          <div class="sg-phone-frame">Screen Mockup</div>
-        </div>
-        <div class="sg-screen-card">
-          <span>Cart Review</span>
-          <div class="sg-phone-frame">Screen Mockup</div>
-        </div>
-        <div class="sg-screen-card">
-          <span>Cart Checkout</span>
-          <div class="sg-phone-frame">Screen Mockup</div>
-        </div>
-        <div class="sg-screen-card">
-          <span>Purchase Confirmation</span>
-          <div class="sg-phone-frame">Screen Mockup</div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-</body>
-</html>
+      <!-- Body & Metadata Row -->
+      <tr class="row-body">
+        <td class="col-element">Body & Metadata</td>
+        <td class="col-weight">Regular</td>
+        <td class="col-size">12px</td>
+        <td class="col-purpose">Item descriptions, review body text, dates, star ratings, subtle footer info.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

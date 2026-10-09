@@ -8,6 +8,7 @@ body {
   background-color: #ffffff;
   color: #000000;
   line-height: 1.5;
+  font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .navbar {
@@ -82,137 +83,84 @@ body {
 }
 
 /* ==========================================
-   STYLE GUIDE PAGE EXTENSIONS
+   STYLE GUIDE: FONT / TYPOGRAPHY SECTION
    ========================================== */
 
-.sg-header {
-  border-bottom: 2px solid #000000;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
+.sg-font-section {
+  margin-top: 1rem;
+  margin-bottom: 4rem;
 }
 
-.sg-header h1 {
-  font-size: 2.2rem;
-  font-weight: bold;
+.sg-font-title {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 2.5rem;
 }
 
-.sg-header p {
-  font-size: 1.1rem;
-  color: #444444;
-}
-
-.sg-card-text {
-  border: 2px solid #000000;
-  border-radius: 12px;
-  padding: 1.5rem;
-  background-color: #ffffff;
-}
-
-.sg-card-text p {
-  margin-bottom: 1rem;
-}
-
-.sg-card-text p:last-child {
-  margin-bottom: 0;
-}
-
-.sg-table {
+.sg-font-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
-}
-
-.sg-table th, 
-.sg-table td {
   text-align: left;
-  padding: 0.75rem 1rem;
-  border: 1px solid #000000;
 }
 
-.sg-table th {
-  background-color: #f0f0f0;
-  font-weight: bold;
+/* Light gray header row */
+.sg-font-table thead tr {
+  background-color: #f5f5f5;
 }
 
-.sg-color-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 1rem;
+.sg-font-table th {
+  padding: 1.25rem 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #000000;
+  border: none;
 }
 
-.sg-swatch {
-  height: 90px;
-  border: 2px solid #000000;
-  border-radius: 12px;
-  display: flex;
-  align-items: flex-end;
-  padding: 0.5rem;
+.sg-font-table td {
+  padding: 2.5rem 1.5rem;
+  vertical-align: top;
+  border: none;
 }
 
-.sg-swatch span {
-  font-size: 0.85rem;
-  font-weight: bold;
-  background: #ffffff;
-  padding: 2px 6px;
-  border: 1px solid #000000;
-  border-radius: 4px;
+/* Row 1: Primary Headings (24px / Bold) */
+.row-primary .col-element,
+.row-primary .col-weight,
+.row-primary .col-size {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.row-primary .col-purpose {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+  max-width: 320px;
 }
 
-.sg-icon-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  align-items: center;
+/* Row 2: UI Controls & Subheads (16px / Medium) */
+.row-subheads .col-element,
+.row-subheads .col-weight,
+.row-subheads .col-size {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.row-subheads .col-purpose {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 320px;
 }
 
-.sg-icon-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem;
-  border: 2px solid #000000;
-  border-radius: 12px;
-  min-width: 100px;
+/* Row 3: Body & Metadata (12px / Regular) */
+.row-body .col-element,
+.row-body .col-weight,
+.row-body .col-size {
+  font-size: 0.75rem;
+  font-weight: 400;
 }
-
-.sg-icon-item img {
-  max-height: 48px;
-  width: auto;
-  object-fit: contain;
-}
-
-.sg-icon-item span {
-  font-size: 0.85rem;
-}
-
-.sg-wireframe-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1rem;
-}
-
-.sg-screen-card {
-  border: 2px solid #000000;
-  border-radius: 12px;
-  padding: 0.75rem;
-  text-align: center;
-}
-
-.sg-screen-card span {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.sg-phone-frame {
-  height: 200px;
-  border: 2px dashed #000000;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  color: #666666;
+.row-body .col-purpose {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.8;
+  max-width: 320px;
 }
