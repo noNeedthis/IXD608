@@ -212,3 +212,73 @@ body {
   border-radius: 8px;
   width: 100%;
 }
+/* ==========================================
+   STYLE GUIDE: CARDS SECTION
+   ========================================== */
+
+.sg-cards-section {
+  margin-bottom: 4rem;
+}
+
+.sg-cards-title {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 2.5rem;
+}
+
+.sg-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Base Card Style */
+.sg-card {
+  height: 140px;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Card Flat: Main Medium Blue (#6EB2FF) */
+.sg-card-flat {
+  background-color: #6EB2FF;
+  color: #ffffff;
+}
+
+/* Card Soft: Clean white with subtle elevation shadow */
+.sg-card-soft {
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Hard: Clean white with crisp border */
+.sg-card-hard {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+/* Card Main Light: Light Blue Accent (#BBE1FF) */
+.sg-card-main-light {
+  background-color: #BBE1FF;
+  color: #000000;
+}
+
+/* Card Dark: Main Dark Blue (#3B99FF) */
+.sg-card-dark {
+  background-color: #3B99FF;
+  color: #ffffff;
+}
+
+/* Card Neutral Light: Soft Neutral (#F4F4F4) */
+.sg-card-neutral-light {
+  background-color: #F4F4F4;
+  color: #000000;
+}
