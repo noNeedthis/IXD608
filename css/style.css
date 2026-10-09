@@ -609,3 +609,109 @@ input:checked + .sg-slider:before {
 .sg-date-input::-webkit-calendar-picker-indicator:hover {
   filter: opacity(1);
 }
+/* ==========================================
+   STYLE GUIDE: PRODUCT CARDS SECTION
+   ========================================== */
+
+.sg-products-section {
+  margin-bottom: 4rem;
+}
+
+.sg-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.sg-product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.sg-product-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: #EAEAEA;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.sg-wishlist-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #222222;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.sg-wishlist-btn:hover {
+  transform: scale(1.1);
+  color: #3B99FF;
+}
+
+.sg-product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sg-product-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.sg-product-price {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 0.75rem;
+}
+
+.sg-product-badge {
+  background-color: #BBE1FF;
+  color: #000000;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+/* Responsive adjustment for mobile screens */
+@media (max-width: 900px) {
+  .sg-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* ==========================================
+/* ==========================================
+   SECTION SPACING (1 INCH SPACING)
+   ========================================== */
+
+/* Top spacing for the initial Fonts section */
+.sg-font-section {
+  margin-top: 1in;
+}
+
+/* Bottom spacing for all sections */
+.section,
+.sg-font-section,
+.sg-colors-section,
+.sg-cards-section,
+.sg-nav-section,
+.sg-forms-section,
+.sg-products-section {
+  margin-bottom: 1in;
+}
