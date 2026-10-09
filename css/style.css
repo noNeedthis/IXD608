@@ -537,3 +537,75 @@ input:checked + .sg-slider {
 input:checked + .sg-slider:before {
   transform: translateX(24px);
 }
+/* ==========================================
+   STYLE GUIDE: FORMS & INPUTS SECTION
+   ========================================== */
+
+.sg-forms-section {
+  margin-bottom: 4rem;
+}
+
+.sg-form-subtitle {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.sg-form-section-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+/* Vertical Form Layout */
+.sg-form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 320px;
+}
+
+.sg-input-group {
+  width: 100%;
+}
+
+/* Input Fields Styling */
+.sg-input {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid #D6D6D6;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: #000000;
+  background-color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sg-input:focus {
+  border-color: #3B99FF;
+  box-shadow: 0 0 0 3px rgba(59, 153, 255, 0.15);
+}
+
+.sg-input::placeholder {
+  color: #999999;
+}
+
+/* Native Calendar & Date Icon Styling */
+.sg-date-input {
+  cursor: pointer;
+}
+
+/* Custom accent color for active dates inside browser calendar pickers */
+.sg-date-input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: opacity(0.6);
+  transition: filter 0.2s ease;
+}
+
+.sg-date-input::-webkit-calendar-picker-indicator:hover {
+  filter: opacity(1);
+}
