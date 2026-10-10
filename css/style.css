@@ -715,3 +715,376 @@ input:checked + .sg-slider:before {
 .sg-products-section {
   margin-bottom: 1in;
 }
+/* ==========================================
+   NAVIGATIONS SECTION 
+   ========================================== */
+
+.sg-navigations-section {
+  margin-bottom: 1in;
+}
+
+.sg-navigations-section .sg-ui-card {
+  margin-bottom: 1.5rem;
+}
+
+.sg-navigations-section .sg-ui-card:last-child {
+  margin-bottom: 0;
+}
+
+/* Common Nav Reset */
+.sg-navigations-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sg-navigations-section a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* 1. Basic Nav */
+.sg-nav-basic {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sg-nav-basic .sg-nav-item a {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.sg-nav-basic .sg-nav-item a:hover {
+  background-color: #F4F4F4;
+}
+
+.sg-nav-basic .sg-nav-item.active a {
+  background-color: #BBE1FF;
+  color: #000000;
+  font-weight: 500;
+}
+
+.sg-nav-basic .sg-nav-item.active a:hover {
+  background-color: #A8D5FF;
+}
+
+/* 2. Flex Nav */
+.sg-nav-flex {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.sg-nav-flex .sg-nav-item a {
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.sg-nav-flex .sg-nav-item a:hover {
+  background-color: #F4F4F4;
+}
+
+.sg-nav-flex .sg-nav-item.active a {
+  background-color: #BBE1FF;
+  color: #000000;
+  font-weight: 500;
+}
+
+.sg-nav-flex .sg-nav-item.active a:hover {
+  background-color: #A8D5FF;
+}
+
+/* 3. Stretch Nav */
+.sg-nav-stretch {
+  display: flex;
+  width: 100%;
+}
+
+.sg-nav-stretch .sg-nav-item {
+  flex: 1;
+  text-align: center;
+}
+
+.sg-nav-stretch .sg-nav-item a {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+}
+
+.sg-nav-stretch .sg-nav-item a:hover {
+  background-color: #F4F4F4;
+}
+
+.sg-nav-stretch .sg-nav-item.active a {
+  background-color: #BBE1FF;
+  color: #000000;
+  font-weight: 500;
+}
+
+.sg-nav-stretch .sg-nav-item.active a:hover {
+  background-color: #A8D5FF;
+}
+
+/* 4. Pills Nav */
+.sg-nav-pills {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.sg-nav-pills .sg-nav-item a {
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  border: 1px solid #D6D6D6;
+}
+
+.sg-nav-pills .sg-nav-item a:hover {
+  background-color: #F4F4F4;
+  border-color: #BFBFBF;
+}
+
+.sg-nav-pills .sg-nav-item.active a {
+  background-color: #BBE1FF;
+  border-color: #BBE1FF;
+  color: #000000;
+  font-weight: 500;
+}
+
+.sg-nav-pills .sg-nav-item.active a:hover {
+  background-color: #A8D5FF;
+  border-color: #A8D5FF;
+}
+
+/* 5. Crumbs Nav */
+.sg-nav-crumbs {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sg-nav-crumbs .sg-nav-item:not(:last-child):after {
+  content: "/";
+  margin-left: 0.5rem;
+  color: #888888;
+}
+
+.sg-nav-crumbs .sg-nav-item a {
+  font-size: 0.95rem;
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+.sg-nav-crumbs .sg-nav-item a:hover {
+  background-color: #F4F4F4;
+  color: #000000;
+}
+
+.sg-nav-crumbs .sg-nav-item.active a {
+  font-weight: 600;
+  color: #3B99FF;
+}
+
+.sg-nav-crumbs .sg-nav-item.active a:hover {
+  background-color: rgba(59, 153, 255, 0.1);
+}
+
+/* 6. Material Nav */
+.sg-nav-material {
+  display: flex;
+  width: 100%;
+}
+
+.sg-nav-material .sg-nav-item {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.sg-nav-material .sg-nav-item a {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+}
+
+.sg-nav-material .sg-nav-item a:hover {
+  background-color: #F4F4F4;
+}
+
+.sg-nav-material .sg-nav-item.active a {
+  font-weight: 600;
+  color: #000000;
+}
+
+.sg-nav-material .sg-nav-item.active:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #3B99FF;
+  border-radius: 3px 3px 0 0;
+}
+/* ==========================================
+   STYLE GUIDE: ORDER SUMMARY SECTION
+   ========================================== */
+
+.sg-order-summary-section {
+  margin-bottom: 1in;
+}
+
+.sg-order-summary-card {
+  max-width: 480px;
+  background-color: #FAFAFA;
+  border: 1px solid #EAEAEA;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.sg-summary-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.sg-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #333333;
+}
+
+.sg-summary-price {
+  font-weight: 500;
+  color: #000000;
+}
+
+.sg-summary-divider {
+  border: none;
+  border-top: 1px solid #E5E5E5;
+  margin: 0.5rem 0;
+}
+
+.sg-summary-total {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.sg-summary-total .sg-summary-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+/* Primary Checkout Button */
+.sg-checkout-btn {
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  background-color: #3B99FF;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.sg-checkout-btn:hover {
+  background-color: #2A88EE;
+}
+
+.sg-checkout-btn:active {
+  transform: scale(0.99);
+}
+/* ==========================================
+   STYLE GUIDE: ORDER SUMMARY SECTION
+   ========================================== */
+
+.sg-order-summary-section {
+  margin-bottom: 1in;
+}
+
+.sg-order-summary-card {
+  max-width: 480px;
+  background-color: #FAFAFA;
+  border: 1px solid #EAEAEA;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.sg-summary-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.sg-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #333333;
+}
+
+.sg-summary-price {
+  font-weight: 500;
+  color: #000000;
+}
+
+.sg-summary-divider {
+  border: none;
+  border-top: 1px solid #E5E5E5;
+  margin: 0.5rem 0;
+}
+
+.sg-summary-total {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.sg-summary-total .sg-summary-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+/* Primary Checkout Button */
+.sg-checkout-btn {
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  background-color: #3B99FF;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.sg-checkout-btn:hover {
+  background-color: #2A88EE;
+}
+
+.sg-checkout-btn:active {
+  transform: scale(0.99);
+}
