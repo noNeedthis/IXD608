@@ -1,59 +1,293 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Peak Lineup</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peak Lineup</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #0f172a;
+        }
+        
+        /* Smooth card hover transitions */
+        .surf-card {
+            transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+        }
+        .surf-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Pill search bar focus styling */
+        .search-pill {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s ease;
+        }
+        .search-pill:focus-within {
+            box-shadow: 0 4px 16px rgba(59, 130, 246, 0.15);
+            border-color: #3b82f6;
+        }
+    </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col justify-between antialiased">
 
-  <header class="navbar">
-    <div class="logo">Peak Lineup</div>
-    <nav class="nav-links">
-      <a href="#">Rent</a>
-      <a href="#">Buy</a>
-      <a href="#">Travel</a>
-    </nav>
-  </header>
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <span class="text-2xl font-extrabold tracking-tight text-gray-900 group-hover:text-blue-600 transition-colors uppercase">
+                    PEAK LINEUP
+                </span>
+            </a>
 
-  <main class="container">
+            <!-- Desktop 4 Main Tabs -->
+            <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                <a href="index.html" class="px-4 py-2 rounded-full text-sm font-semibold bg-gray-900 text-white transition-all shadow-sm">
+                    Filming
+                </a>
+                <a href="#" class="px-4 py-2 rounded-full text-sm font-semibold text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all">
+                    Upload
+                </a>
+                <a href="#" class="px-4 py-2 rounded-full text-sm font-semibold text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all">
+                    Rankings
+                </a>
+                <a href="#" class="px-4 py-2 rounded-full text-sm font-semibold text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all">
+                    Account
+                </a>
+            </nav>
 
-    <section class="section">
-      <h2 class="section-title">Peak Locations</h2>
-      <div class="card-grid locations-grid">
-        <div class="card-wrapper">
-          <div class="card"></div>
-          <p class="card-label">Location 1</p>
+            <!-- Mobile Menu Toggle Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="p-2 text-gray-600 hover:text-gray-900 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
         </div>
-        <div class="card-wrapper">
-          <div class="card"></div>
-          <p class="card-label">Location 2</p>
-        </div>
-        <div class="card-wrapper">
-          <div class="card"></div>
-          <p class="card-label">Location 3</p>
-        </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <h2 class="section-title">Peak Boards</h2>
-      <div class="card-grid boards-grid">
-        <div class="card-wrapper">
-          <div class="card"></div>
-          <p class="card-label">Board 1</p>
+        <!-- Mobile Navigation Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-gray-100 bg-white px-4 pt-2 pb-4 space-y-2">
+            <a href="index.html" class="block px-4 py-2.5 rounded-xl text-base font-semibold bg-gray-900 text-white">
+                Filming
+            </a>
+            <a href="#" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-gray-600 hover:bg-gray-100">
+                Upload
+            </a>
+            <a href="#" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-gray-600 hover:bg-gray-100">
+                Rankings
+            </a>
+            <a href="#" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-gray-600 hover:bg-gray-100">
+                Account
+            </a>
         </div>
-        <div class="card-wrapper">
-          <div class="card"></div>
-          <p class="card-label">Board 2</p>
-        </div>
-        <div class="card-wrapper">
-          <div class="card"></div>
-          <p class="card-label">Board 3</p>
-        </div>
-      </div>
-    </section>
+    </header>
 
-  </main>
+    <!-- Main Content Container -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-20 flex-grow w-full">
+        
+        <!-- Page Title Header -->
+        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight">
+                Where do you want to be filmed?
+            </h1>
+        </div>
 
+        <!-- Search Bar Section (Pill Shaped UI Matching Wireframe) -->
+        <div class="max-w-xl mx-auto mb-12 sm:mb-16">
+            <div class="search-pill relative flex items-center w-full h-14 sm:h-16 rounded-full border border-gray-300 bg-white px-4 sm:px-6 py-2">
+                <input 
+                    type="text" 
+                    id="destination-search"
+                    placeholder="Search Destinations" 
+                    class="w-full bg-transparent text-gray-800 placeholder-gray-400 text-base sm:text-lg focus:outline-none pr-12"
+                    autocomplete="off"
+                >
+                <button 
+                    type="button" 
+                    aria-label="Search"
+                    class="absolute right-2 sm:right-3 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600 active:scale-95 transition-all shadow-md"
+                >
+                    <i class="fa-solid fa-magnifying-glass text-sm sm:text-base"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Destination Cards Grid -->
+        <div id="destinations-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+            
+            <!-- Card 1: Waikiki, Oahu -->
+            <a href="beach.html?location=waikiki" class="destination-card surf-card block cursor-pointer group" data-name="Waikiki, Oahu Hawaii">
+                <div class="w-full h-56 sm:h-64 rounded-[24px] overflow-hidden bg-gray-100 shadow-sm">
+                    <img 
+                        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" 
+                        alt="Waikiki, Oahu"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        onerror="this.src='https://placehold.co/800x600/e2e8f0/64748b?text=Waikiki,+Oahu'"
+                    >
+                </div>
+                <h3 class="mt-3 text-lg font-semibold text-gray-800 tracking-tight px-1">
+                    Waikiki, Oahu
+                </h3>
+            </a>
+
+            <!-- Card 2: North Shore, Oahu -->
+            <a href="beach.html?location=northshore" class="destination-card surf-card block cursor-pointer group" data-name="North Shore, Oahu Hawaii">
+                <div class="w-full h-56 sm:h-64 rounded-[24px] overflow-hidden bg-gray-100 shadow-sm">
+                    <img 
+                        src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&q=80" 
+                        alt="North Shore, Oahu"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        onerror="this.src='https://placehold.co/800x600/e2e8f0/64748b?text=North+Shore,+Oahu'"
+                    >
+                </div>
+                <h3 class="mt-3 text-lg font-semibold text-gray-800 tracking-tight px-1">
+                    North Shore, Oahu
+                </h3>
+            </a>
+
+            <!-- Card 3: Santa Cruz, California -->
+            <a href="beach.html?location=santacruz" class="destination-card surf-card block cursor-pointer group" data-name="Santa Cruz, California CA">
+                <div class="w-full h-56 sm:h-64 rounded-[24px] overflow-hidden bg-gray-100 shadow-sm">
+                    <img 
+                        src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80" 
+                        alt="Santa Cruz, California"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        onerror="this.src='https://placehold.co/800x600/e2e8f0/64748b?text=Santa+Cruz,+California'"
+                    >
+                </div>
+                <h3 class="mt-3 text-lg font-semibold text-gray-800 tracking-tight px-1">
+                    Santa Cruz, California
+                </h3>
+            </a>
+
+            <!-- Card 4: Katasekaigan, Fujisawa -->
+            <a href="beach.html?location=katasekaigan" class="destination-card surf-card block cursor-pointer group" data-name="Katasekaigan, Fujisawa Enoshima Japan Kanagawa">
+                <div class="w-full h-56 sm:h-64 rounded-[24px] overflow-hidden bg-gray-100 shadow-sm">
+                    <img 
+                        src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=1200&q=80" 
+                        alt="Katasekaigan, Fujisawa"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        onerror="this.src='https://placehold.co/800x600/e2e8f0/64748b?text=Katasekaigan,+Fujisawa'"
+                    >
+                </div>
+                <h3 class="mt-3 text-lg font-semibold text-gray-800 tracking-tight px-1">
+                    Katasekaigan, Fujisawa
+                </h3>
+            </a>
+
+            <!-- Card 5: Siargao, Philippines -->
+            <a href="beach.html?location=siargao" class="destination-card surf-card block cursor-pointer group" data-name="Siargao, Philippines Cloud 9 General Luna">
+                <div class="w-full h-56 sm:h-64 rounded-[24px] overflow-hidden bg-gray-100 shadow-sm">
+                    <img 
+                        src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1200&q=80" 
+                        alt="Siargao, Philippines"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        onerror="this.src='https://placehold.co/800x600/e2e8f0/64748b?text=Siargao,+Philippines'"
+                    >
+                </div>
+                <h3 class="mt-3 text-lg font-semibold text-gray-800 tracking-tight px-1">
+                    Siargao, Philippines
+                </h3>
+            </a>
+
+            <!-- Card 6: Praia da Pipa, Brazil -->
+            <a href="beach.html?location=pipa" class="destination-card surf-card block cursor-pointer group" data-name="Praia da Pipa, Brazil RN Rio Grande do Norte">
+                <div class="w-full h-56 sm:h-64 rounded-[24px] overflow-hidden bg-gray-100 shadow-sm">
+                    <img 
+                        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" 
+                        alt="Praia da Pipa, Brazil"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        onerror="this.src='https://placehold.co/800x600/e2e8f0/64748b?text=Praia+da+Pipa,+Brazil'"
+                    >
+                </div>
+                <h3 class="mt-3 text-lg font-semibold text-gray-800 tracking-tight px-1">
+                    Praia da Pipa, Brazil
+                </h3>
+            </a>
+
+        </div>
+
+        <!-- No Results Found State -->
+        <div id="no-results" class="hidden text-center py-16">
+            <i class="fa-solid fa-water text-gray-300 text-4xl mb-3"></i>
+            <p class="text-gray-500 text-lg font-medium">No surf destinations match your search.</p>
+            <p class="text-gray-400 text-sm mt-1">Try searching for another spot or region.</p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-100 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-gray-500 font-medium">
+                &copy; 2026 PEAK LINEUP. All rights reserved.
+            </p>
+            <div class="flex items-center space-x-6 text-xs text-gray-400">
+                <a href="#" class="hover:text-gray-600 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-gray-600 transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-gray-600 transition-colors">Contact Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Logic Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle Logic
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        menuIcon.classList.remove('fa-xmark');
+                        menuIcon.classList.add('fa-bars');
+                    } else {
+                        menuIcon.classList.remove('fa-bars');
+                        menuIcon.classList.add('fa-xmark');
+                    }
+                });
+            }
+
+            // Real-Time Destination Filtering Logic
+            const searchInput = document.getElementById('destination-search');
+            const cards = document.querySelectorAll('.destination-card');
+            const noResults = document.getElementById('no-results');
+
+            if (searchInput) {
+                searchInput.addEventListener('input', function(e) {
+                    const query = e.target.value.toLowerCase().trim();
+                    let visibleCount = 0;
+
+                    cards.forEach(card => {
+                        const name = card.getAttribute('data-name').toLowerCase();
+                        if (name.includes(query)) {
+                            card.style.display = 'block';
+                            visibleCount++;
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+
+                    if (visibleCount === 0) {
+                        noResults.classList.remove('hidden');
+                    } else {
+                        noResults.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
