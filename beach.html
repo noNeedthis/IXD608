@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waikiki, Oahu - Book Filming | Peak Lineup</title>
+    <title>Select Booking Options | Peak Lineup</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts Inter -->
@@ -13,24 +13,30 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
+            background-color: #f8fafc;
             color: #0f172a;
         }
 
-        /* Custom styling for sleek select arrows */
-        select {
+        .select-input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border-radius: 0.75rem;
+            border: 1px solid #cbd5e1;
+            background-color: #ffffff;
+            font-size: 0.95rem;
+            color: #1e293b;
+            transition: all 0.2s ease;
             appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%204b5563' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%3B64748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            background-position: right 1.25rem center;
-            background-size: 1.25em;
+            background-position: right 1rem center;
+            background-size: 1.25rem;
         }
 
-        /* Styling for native date input picker button */
-        input[type="date"]::-webkit-calendar-picker-indicator {
-            cursor: pointer;
-            padding: 4px;
-            filter: invert(0.3);
+        .select-input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
         }
     </style>
 </head>
@@ -91,119 +97,92 @@
     <!-- Main Content Container -->
     <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-20 flex-grow w-full">
         
-        <!-- Breadcrumb / Back Navigation -->
+        <!-- Back Button -->
         <div class="mb-6">
-            <a href="index.html" class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">
-                <i class="fa-solid fa-arrow-left mr-2 text-xs"></i> Back to Destinations
+            <a href="index.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">
+                <i class="fa-solid fa-arrow-left text-xs"></i> Change Location
             </a>
         </div>
 
-        <!-- Location Page Heading -->
-        <div class="mb-8 sm:mb-10 text-center sm:text-left">
-            <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
+        <!-- Beach Title -->
+        <div class="text-center mb-8">
+            <h1 id="page-title" class="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
                 Waikiki, Oahu
             </h1>
-            <p class="text-gray-500 text-base mt-2">
-                Configure your filming session details below.
+            <p class="text-gray-500 text-sm sm:text-base mt-2">
+                Configure your session details and secure your filmer slot.
             </p>
         </div>
 
-        <!-- Booking Form Card -->
-        <div class="bg-gray-50/80 border border-gray-200/80 rounded-3xl p-6 sm:p-8 md:p-10 shadow-sm">
-            <form id="booking-form" class="space-y-6 sm:space-y-8" onsubmit="handleConfirm(event)">
+        <!-- Selection Card -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-sm">
+            
+            <form id="booking-form" onsubmit="goToCheckout(event)" class="space-y-6">
                 
-                <!-- 1. Pick your specific beach -->
+                <!-- 1. Pick Specific Beach -->
                 <div>
-                    <label for="beach-select" class="block text-sm font-bold text-gray-900 uppercase tracking-wider mb-2">
-                        Pick your specific beach
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
+                        Pick Your Specific Beach
                     </label>
-                    <div class="relative">
-                        <select 
-                            id="beach-select" 
-                            required 
-                            class="w-full bg-white border border-gray-300 rounded-2xl px-5 py-4 text-gray-800 font-medium text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all cursor-pointer shadow-sm"
-                        >
-                            <option value="" disabled selected>Select a break / surf spot</option>
-                            <option value="queens">Queens</option>
-                            <option value="canoes">Canoes</option>
-                            <option value="publics">Publics</option>
-                            <option value="bowls">Alawai Bowls</option>
-                        </select>
-                    </div>
+                    <select id="beach-select" required class="select-input">
+                        <option value="Queens">Queens</option>
+                        <option value="Canoes">Canoes</option>
+                        <option value="Publics">Publics</option>
+                        <option value="Bowls">Alawai Bowls</option>
+                    </select>
                 </div>
 
-                <!-- 2. Specific package -->
+                <!-- 2. Specific Package -->
                 <div>
-                    <label for="package-select" class="block text-sm font-bold text-gray-900 uppercase tracking-wider mb-2">
-                        Specific package
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
+                        Specific Package
                     </label>
-                    <div class="relative">
-                        <select 
-                            id="package-select" 
-                            required 
-                            class="w-full bg-white border border-gray-300 rounded-2xl px-5 py-4 text-gray-800 font-medium text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all cursor-pointer shadow-sm"
-                        >
-                            <option value="" disabled selected>Select a package option</option>
-                            <option value="beach-75">Beach Filming — $75</option>
-                            <option value="water-100">Water Filming — $100</option>
-                            <option value="full-150">Full Session Package — $150</option>
-                        </select>
-                    </div>
+                    <select id="package-select" required class="select-input">
+                        <option value="Beach Filming - $75">Beach Filming - $75</option>
+                        <option value="Water Filming - $100">Water Filming - $100</option>
+                        <option value="Full Session Package - $150">Full Session Package - $150</option>
+                    </select>
                 </div>
 
                 <!-- 3. Date -->
                 <div>
-                    <label for="date-select" class="block text-sm font-bold text-gray-900 uppercase tracking-wider mb-2">
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
                         Date
                     </label>
-                    <input 
-                        type="date" 
-                        id="date-select" 
-                        required 
-                        class="w-full bg-white border border-gray-300 rounded-2xl px-5 py-4 text-gray-800 font-medium text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all cursor-pointer shadow-sm"
-                    >
+                    <input type="date" id="date-select" required class="select-input" style="background-image: none;">
                 </div>
 
-                <!-- 4. Time -->
+                <!-- 4. Time Slot -->
                 <div>
-                    <label for="time-select" class="block text-sm font-bold text-gray-900 uppercase tracking-wider mb-2">
-                        Time Slot (1 Hour)
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
+                        Time Slot (1-Hour Slots from 6:00 AM to 6:00 PM)
                     </label>
-                    <div class="relative">
-                        <select 
-                            id="time-select" 
-                            required 
-                            class="w-full bg-white border border-gray-300 rounded-2xl px-5 py-4 text-gray-800 font-medium text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all cursor-pointer shadow-sm"
-                        >
-                            <option value="" disabled selected>Choose a 1-hour time window</option>
-                            <option value="06:00-07:00">6:00 AM – 7:00 AM</option>
-                            <option value="07:00-08:00">7:00 AM – 8:00 AM</option>
-                            <option value="08:00-09:00">8:00 AM – 9:00 AM</option>
-                            <option value="09:00-10:00">9:00 AM – 10:00 AM</option>
-                            <option value="10:00-11:00">10:00 AM – 11:00 AM</option>
-                            <option value="11:00-12:00">11:00 AM – 12:00 PM</option>
-                            <option value="12:00-13:00">12:00 PM – 1:00 PM</option>
-                            <option value="13:00-14:00">1:00 PM – 2:00 PM</option>
-                            <option value="14:00-15:00">2:00 PM – 3:00 PM</option>
-                            <option value="15:00-16:00">3:00 PM – 4:00 PM</option>
-                            <option value="16:00-17:00">4:00 PM – 5:00 PM</option>
-                            <option value="17:00-18:00">5:00 PM – 6:00 PM</option>
-                        </select>
-                    </div>
+                    <select id="time-select" required class="select-input">
+                        <option value="6:00 AM - 7:00 AM">6:00 AM - 7:00 AM</option>
+                        <option value="7:00 AM - 8:00 AM" selected>7:00 AM - 8:00 AM</option>
+                        <option value="8:00 AM - 9:00 AM">8:00 AM - 9:00 AM</option>
+                        <option value="9:00 AM - 10:00 AM">9:00 AM - 10:00 AM</option>
+                        <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
+                        <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
+                        <option value="12:00 PM - 1:00 PM">12:00 PM - 1:00 PM</option>
+                        <option value="1:00 PM - 2:00 PM">1:00 PM - 2:00 PM</option>
+                        <option value="2:00 PM - 3:00 PM">2:00 PM - 3:00 PM</option>
+                        <option value="3:00 PM - 4:00 PM">3:00 PM - 4:00 PM</option>
+                        <option value="4:00 PM - 5:00 PM">4:00 PM - 5:00 PM</option>
+                        <option value="5:00 PM - 6:00 PM">5:00 PM - 6:00 PM</option>
+                    </select>
                 </div>
 
-                <!-- Confirmation Action Section -->
-                <div class="pt-4 border-t border-gray-200/80">
-                    <button 
-                        type="submit" 
-                        class="w-full bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-bold text-lg py-4 px-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-3"
-                    >
+                <!-- Submit / Confirm Button -->
+                <div class="pt-4">
+                    <button type="submit" class="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-base transition-all shadow-md hover:shadow-lg active:scale-[0.99] flex items-center justify-center gap-2">
                         <span>Confirm & Continue to Checkout</span>
                         <i class="fa-solid fa-arrow-right text-sm"></i>
                     </button>
                 </div>
 
             </form>
+
         </div>
 
     </main>
@@ -222,48 +201,56 @@
         </div>
     </footer>
 
-    <!-- Interactive Script -->
+    <!-- Script to Read URL Params & Navigate to Checkout -->
     <script>
+        let currentLocationName = "Waikiki, Oahu";
+
         document.addEventListener('DOMContentLoaded', function() {
-            // Mobile Menu Toggle
+            // Set default date input to today
+            const dateInput = document.getElementById('date-select');
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.value = today;
+            dateInput.min = today;
+
+            // Read location from index.html click parameter
+            const params = new URLSearchParams(window.location.search);
+            const locationKey = params.get('location');
+
+            if (locationKey === 'northshore') currentLocationName = 'North Shore, Oahu';
+            else if (locationKey === 'santacruz') currentLocationName = 'Santa Cruz, California';
+            else if (locationKey === 'katasekaigan') currentLocationName = 'Katasekaigan, Fujisawa';
+            else if (locationKey === 'siargao') currentLocationName = 'Siargao, Philippines';
+            else if (locationKey === 'pipa') currentLocationName = 'Praia da Pipa, Brazil';
+            else if (locationKey === 'waikiki') currentLocationName = 'Waikiki, Oahu';
+
+            document.getElementById('page-title').textContent = currentLocationName;
+
+            // Mobile menu toggle
             const menuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
-            const menuIcon = document.getElementById('menu-icon');
-
             if (menuBtn && mobileMenu) {
-                menuBtn.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
-                    if (mobileMenu.classList.contains('hidden')) {
-                        menuIcon.classList.remove('fa-xmark');
-                        menuIcon.classList.add('fa-bars');
-                    } else {
-                        menuIcon.classList.remove('fa-bars');
-                        menuIcon.classList.add('fa-xmark');
-                    }
-                });
-            }
-
-            // Set minimum selectable date to today
-            const dateInput = document.getElementById('date-select');
-            if (dateInput) {
-                const today = new Date().toISOString().split('T')[0];
-                dateInput.setAttribute('min', today);
+                menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
             }
         });
 
-        // Form Submit Handler
-        function handleConfirm(event) {
-            event.preventDefault();
-            
+        function goToCheckout(e) {
+            e.preventDefault();
+
             const beach = document.getElementById('beach-select').value;
-            const pkg = document.getElementById('package-select').value;
+            const packageVal = document.getElementById('package-select').value;
             const date = document.getElementById('date-select').value;
             const time = document.getElementById('time-select').value;
 
-            console.log('Booking Selection:', { beach, pkg, date, time });
-            
-            // Redirects to cart/checkout page (e.g. checkout.html)
-            // window.location.href = 'checkout.html';
+            // Build query URL to pass selections to checkout.html
+            const searchParams = new URLSearchParams({
+                location: currentLocationName,
+                beach: beach,
+                package: packageVal,
+                date: date,
+                time: time
+            });
+
+            window.location.href = 'checkout.html?' + searchParams.toString();
         }
     </script>
 </body>

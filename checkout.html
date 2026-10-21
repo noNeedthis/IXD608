@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Peak Lineup</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            border: 1px solid #cbd5e1;
+            background-color: #ffffff;
+            font-size: 0.95rem;
+            color: #1e293b;
+            transition: all 0.2s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        .payment-tab {
+            transition: all 0.2s ease;
+        }
+        .payment-tab.active {
+            border-color: #2563eb;
+            background-color: #eff6ff;
+            color: #1d4ed8;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <span class="text-2xl font-extrabold tracking-tight text-gray-900 group-hover:text-blue-600 transition-colors uppercase">
+                    PEAK LINEUP
+                </span>
+            </a>
+
+            <!-- Desktop 4 Main Tabs -->
+            <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                <a href="index.html" class="px-4 py-2 rounded-full text-sm font-semibold bg-gray-900 text-white transition-all shadow-sm">
+                    Filming
+                </a>
+                <a href="#" class="px-4 py-2 rounded-full text-sm font-semibold text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all">
+                    Upload
+                </a>
+                <a href="#" class="px-4 py-2 rounded-full text-sm font-semibold text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all">
+                    Rankings
+                </a>
+                <a href="#" class="px-4 py-2 rounded-full text-sm font-semibold text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all">
+                    Account
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="p-2 text-gray-600 hover:text-gray-900 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-gray-100 bg-white px-4 pt-2 pb-4 space-y-2">
+            <a href="index.html" class="block px-4 py-2.5 rounded-xl text-base font-semibold bg-gray-900 text-white">
+                Filming
+            </a>
+            <a href="#" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-gray-600 hover:bg-gray-100">
+                Upload
+            </a>
+            <a href="#" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-gray-600 hover:bg-gray-100">
+                Rankings
+            </a>
+            <a href="#" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-gray-600 hover:bg-gray-100">
+                Account
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Checkout Container -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-20 flex-grow w-full">
+        
+        <!-- Back Button -->
+        <div class="mb-6">
+            <a href="javascript:history.back()" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">
+                <i class="fa-solid fa-arrow-left text-xs"></i> Back to options
+            </a>
+        </div>
+
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mb-8">
+            Checkout & Confirmation
+        </h1>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- Left Column: Order Summary -->
+            <div class="lg:col-span-5 bg-white rounded-2xl p-6 sm:p-7 border border-gray-200 shadow-sm">
+                <h2 class="text-lg font-bold text-gray-900 mb-4 pb-3 border-b border-gray-100 flex items-center gap-2">
+                    <i class="fa-solid fa-video text-blue-600"></i> Session Summary
+                </h2>
+
+                <div class="space-y-4 text-sm">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider font-semibold text-gray-400 block mb-0.5">Location</span>
+                        <p id="summary-location" class="font-bold text-gray-800 text-base">Waikiki, Oahu</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 pt-2 border-t border-gray-50">
+                        <div>
+                            <span class="text-xs uppercase tracking-wider font-semibold text-gray-400 block mb-0.5">Specific Beach</span>
+                            <p id="summary-beach" class="font-semibold text-gray-700">Queens</p>
+                        </div>
+                        <div>
+                            <span class="text-xs uppercase tracking-wider font-semibold text-gray-400 block mb-0.5">Package</span>
+                            <p id="summary-package" class="font-semibold text-gray-700">Beach Filming</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 pt-2 border-t border-gray-50">
+                        <div>
+                            <span class="text-xs uppercase tracking-wider font-semibold text-gray-400 block mb-0.5">Date</span>
+                            <p id="summary-date" class="font-semibold text-gray-700">Today</p>
+                        </div>
+                        <div>
+                            <span class="text-xs uppercase tracking-wider font-semibold text-gray-400 block mb-0.5">Time Slot</span>
+                            <p id="summary-time" class="font-semibold text-gray-700">7:00 AM - 8:00 AM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Price Breakdown -->
+                <div class="mt-6 pt-5 border-t border-gray-200 space-y-2.5">
+                    <div class="flex justify-between text-base font-bold text-gray-900 pt-1">
+                        <span>Total Due</span>
+                        <span id="price-total" class="text-blue-600">$75.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Payment Form -->
+            <div class="lg:col-span-7 bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-sm">
+                <h2 class="text-lg font-bold text-gray-900 mb-6 pb-3 border-b border-gray-100 flex items-center gap-2">
+                    <i class="fa-solid fa-credit-card text-blue-600"></i> Payment Details
+                </h2>
+
+                <!-- Payment Options -->
+                <div class="grid grid-cols-2 gap-3 mb-6">
+                    <button type="button" class="payment-tab active flex items-center justify-center gap-2 p-3 rounded-xl border border-gray-300 font-semibold text-sm">
+                        <i class="fa-solid fa-credit-card"></i> Credit Card
+                    </button>
+                    <button type="button" class="payment-tab flex items-center justify-center gap-2 p-3 rounded-xl border border-gray-200 text-gray-500 hover:bg-gray-50 font-semibold text-sm">
+                        <i class="fa-brands fa-apple text-base"></i> Apple Pay
+                    </button>
+                </div>
+
+                <form id="checkout-form" class="space-y-4" onsubmit="handlePaymentSubmit(event)">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Name on Card</label>
+                        <input type="text" required placeholder="First Last" class="form-input">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Card Number</label>
+                        <div class="relative">
+                            <input type="text" required maxlength="19" placeholder="4532 •••• •••• 8901" class="form-input pr-10">
+                            <i class="fa-solid fa-lock absolute right-3.5 top-3.5 text-gray-400 text-sm"></i>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Expiration</label>
+                            <input type="text" required placeholder="MM/YY" maxlength="5" class="form-input">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">CVV</label>
+                            <input type="text" required placeholder="123" maxlength="4" class="form-input">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Billing ZIP / Postal Code</label>
+                        <input type="text" required placeholder="96815" class="form-input">
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="submit" class="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-base transition-all shadow-md hover:shadow-lg active:scale-[0.99] flex items-center justify-center gap-2">
+                            <span>Pay & Confirm Session</span>
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                    </div>
+
+                    <p class="text-center text-xs text-gray-400 pt-2 flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-shield-halved text-green-600"></i> Encrypted & Secure 256-bit Payment
+                    </p>
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-100 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-gray-500 font-medium">
+                &copy; 2026 PEAK LINEUP. All rights reserved.
+            </p>
+            <div class="flex items-center space-x-6 text-xs text-gray-400">
+                <a href="#" class="hover:text-gray-600 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-gray-600 transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-gray-600 transition-colors">Contact Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script to Parse URL Params & Submit to Confirmation Page -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            
+            const locationParam = params.get('location') || 'Waikiki, Oahu';
+            const beachParam = params.get('beach') || 'Queens';
+            const packageParam = params.get('package') || 'Beach Filming - $75';
+            const dateParam = params.get('date') || 'Today';
+            const timeParam = params.get('time') || '07:00 AM - 08:00 AM';
+
+            // Populate summary fields
+            document.getElementById('summary-location').textContent = locationParam;
+            document.getElementById('summary-beach').textContent = beachParam;
+            document.getElementById('summary-package').textContent = packageParam;
+            document.getElementById('summary-date').textContent = dateParam;
+            document.getElementById('summary-time').textContent = timeParam;
+
+            // Update total price based on package selected
+            if (packageParam.includes('$100')) {
+                document.getElementById('price-total').textContent = '$100.00';
+            } else if (packageParam.includes('$150')) {
+                document.getElementById('price-total').textContent = '$150.00';
+            } else {
+                document.getElementById('price-total').textContent = '$75.00';
+            }
+
+            // Mobile menu toggle
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            }
+        });
+
+        function handlePaymentSubmit(e) {
+            e.preventDefault();
+            // Forward current selection params straight to confirmation.html
+            const params = new URLSearchParams(window.location.search);
+            window.location.href = 'confirmation.html?' + params.toString();
+        }
+    </script>
+</body>
+</html>
