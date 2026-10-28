@@ -190,7 +190,7 @@ if ($selected_id !== null) {
 
         <div class="card">
             <h1>User Account Editor</h1>
-            <div class="subtitle">Modify user profile data stored in JSON.</div>
+            <div class="subtitle"></div>
 
             <form method="POST" action="users.php">
                 <input type="hidden" name="id" value="<?= htmlspecialchars($selected_user['id']) ?>">
@@ -220,7 +220,7 @@ if ($selected_id !== null) {
         <!-- VIEW 2: USER LIST -->
         <div class="card">
             <h1>User List</h1>
-            <div class="subtitle">Select a user to edit their JSON profile data.</div>
+            <div class="subtitle"></div>
 
             <ul class="user-list">
                 <?php foreach ($users as $user): ?>
