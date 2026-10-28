@@ -13,7 +13,7 @@ if (file_exists($json_path)) {
     $users = json_decode($json_data, true) ?? [];
 }
 
-// Check if a specific user ID is passed in the URL (e.g. users.php?id=1)
+// Check if a specific user ID is passed in the URL 
 $selected_id = isset($_GET['id']) && $_GET['id'] !== '' ? $_GET['id'] : null;
 $selected_user = null;
 
