@@ -1,6 +1,41 @@
 [
   {
     "id": 1,
+    "name": "Hamilton Cline",
+    "type": "Instructor",
+    "email": "hamilton@example.com",
+    "classes": ["601", "608"]
+  },
+  {
+    "id": 2,
+    "name": "Phoebe Buffay",
+    "type": "Student",
+    "email": "pbuffay@example.com",
+    "classes": ["608"]
+  },
+  {
+    "id": 3,
+    "name": "Joey Tribbiani",
+    "type": "Student",
+    "email": "jtribbiani@example.com",
+    "classes": ["601"]
+  },
+  {
+    "id": 4,
+    "name": "Chandler Bing",
+    "type": "Student",
+    "email": "cbing@example.com",
+    "classes": ["608"]
+  },
+  {
+    "id": 5,
+    "name": "Monica Gellar",
+    "type": "Student",
+    "email": "mgellar@example.com",
+    "classes": ["601", "608"]
+  },
+  {
+    "id": 6,
     "name": "Ross Gellar",
     "type": "Professor",
     "email": "rgellar1971@hotmail.com",
