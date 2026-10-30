@@ -3,7 +3,7 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// Path to JSON relative from admin/
+// Path to JSON /
 $json_path = '../data/users.json';
 
 // Load JSON data
