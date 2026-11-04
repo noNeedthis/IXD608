@@ -14,32 +14,6 @@ $products = [
     ["id" => 11, "name" => "rashguardl", "category" => "Apparel", "price" => 48.00, "description" => "UPF 50+ quick-dry long sleeve rashguard."],
     ["id" => 12, "name" => "sunscreenzinc", "category" => "Accessories", "price" => 18.00, "description" => "Mineral ocean-safe SPF 50 sunscreen stick."]
 ];
-
-// Handle SQL File Export 
-if (isset($_GET['action']) && $_GET['action'] === 'export_sql') {
-    header('Content-Type: application/sql');
-    header('Content-Disposition: attachment; filename="products.sql"');
-    
-    echo "-- PEAK LINEUP - Products Export SQL\n";
-    echo "-- Generated automatically from admin/products.php\n\n";
-    echo "CREATE TABLE IF NOT EXISTS `products` (\n";
-    echo "  `id` INT(11) NOT NULL AUTO_INCREMENT,\n";
-    echo "  `name` VARCHAR(100) NOT NULL,\n";
-    echo "  `category` VARCHAR(50) NOT NULL,\n";
-    echo "  `price` DECIMAL(10,2) NOT NULL,\n";
-    echo "  `description` TEXT,\n";
-    echo "  PRIMARY KEY (`id`)\n";
-    echo ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;\n\n";
-    echo "INSERT INTO `products` (`id`, `name`, `category`, `price`, `description`) VALUES\n";
-
-    $rows = [];
-    foreach ($products as $p) {
-        $desc = str_replace("'", "''", $p['description']);
-        $rows[] = "({$p['id']}, '{$p['name']}', '{$p['category']}', {$p['price']}, '{$desc}')";
-    }
-    echo implode(",\n", $rows) . ";\n";
-    exit;
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -107,20 +81,6 @@ if (isset($_GET['action']) && $_GET['action'] === 'export_sql') {
             font-size: 14px;
             margin-top: 4px;
         }
-        .btn-export {
-            background: #2563eb;
-            color: #fff;
-            text-decoration: none;
-            padding: 12px 20px;
-            font-size: 14px;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: background 0.2s;
-            display: inline-block;
-        }
-        .btn-export:hover {
-            background: #1d4ed8;
-        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -171,9 +131,8 @@ if (isset($_GET['action']) && $_GET['action'] === 'export_sql') {
         <div class="header-row">
             <div>
                 <h1>Products Catalog</h1>
-                <div class="subtitle">Manage products and export SQL data structure.</div>
+                <div class="subtitle"></div>
             </div>
-            <a href="products.php?action=export_sql" class="btn-export">&darr; Export SQL File</a>
         </div>
 
         <table>
