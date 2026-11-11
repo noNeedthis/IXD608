@@ -1,7 +1,5 @@
 <?php
 // product_item.php
-// Individual item page 
-
 $id = $_GET['id'] ?? null;
 $dataFile = 'data/products.json';
 $products = file_exists($dataFile) ? json_decode(file_get_contents($dataFile), true) : [];
@@ -24,8 +22,8 @@ if (!$product) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><= htmlspecialchars($product['name']) ?> - Peak Lineup</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <title><?= htmlspecialchars($product['name']) ?> - Peak Lineup</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>

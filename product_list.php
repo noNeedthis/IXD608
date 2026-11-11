@@ -1,7 +1,5 @@
 <?php
 // product_list.php
-// Main storefront 
-
 $dataFile = 'data/products.json';
 $products = file_exists($dataFile) ? json_decode(file_get_contents($dataFile), true) : [];
 ?>
@@ -10,7 +8,7 @@ $products = file_exists($dataFile) ? json_decode(file_get_contents($dataFile), t
 <head>
     <meta charset="UTF-8">
     <title>Peak Lineup - Product Catalog</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>

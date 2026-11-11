@@ -12,5 +12,75 @@
     "price": 1050.00,
     "description": "Thunderbolt Red epoxy carbon flex construction designed for versatility in small to overhead surf.",
     "created_at": "2026-11-01 06:00:00"
+  },
+  {
+    "id": "prod_03",
+    "name": "George Greenough 4-A Template Fin 10.5\"",
+    "price": 120.00,
+    "description": "Classic flex fin template offering drive and smooth, drawn-out turns from the tail.",
+    "created_at": "2026-11-02 08:30:00"
+  },
+  {
+    "id": "prod_04",
+    "name": "Donald Takayama Flex Fin 9.75\"",
+    "price": 110.00,
+    "description": "Balanced rake and wide base for stable noseriding and effortless pivot turns.",
+    "created_at": "2026-11-02 09:15:00"
+  },
+  {
+    "id": "prod_05",
+    "name": "Seakong Custom Two-Board Travel Bag",
+    "price": 280.00,
+    "description": "Custom-measured protective day and travel layout designed for multiple longboards.",
+    "created_at": "2026-11-03 10:00:00"
+  },
+  {
+    "id": "prod_06",
+    "name": "Peak Lineup Pro Drone Session - North Shore",
+    "price": 350.00,
+    "description": "Full 4K aerial videography session with a vetted local drone pilot tracking your morning set.",
+    "created_at": "2026-11-04 06:00:00"
+  },
+  {
+    "id": "prod_07",
+    "name": "Peak Lineup Quick-Turn Battery Kit",
+    "price": 145.00,
+    "description": "High-capacity spare battery setup optimized for rapid 45-second field swaps during surf shoots.",
+    "created_at": "2026-11-05 11:20:00"
+  },
+  {
+    "id": "prod_08",
+    "name": "Ceptics Type N International Travel Adapter",
+    "price": 35.00,
+    "description": "Compact grounded travel adapter essential for powering gear on international coastal trips.",
+    "created_at": "2026-11-06 14:00:00"
+  },
+  {
+    "id": "prod_09",
+    "name": "Anker Nano 5-in-1 Travel Charger",
+    "price": 45.00,
+    "description": "Multi-port high-speed charging brick designed to keep all mobile and camera gear powered on the go.",
+    "created_at": "2026-11-06 14:30:00"
+  },
+  {
+    "id": "prod_10",
+    "name": "Waterproof Action Float Leash",
+    "price": 25.00,
+    "description": "High-visibility flotation strap for handheld cameras and remote controllers during ocean sessions.",
+    "created_at": "2026-11-07 07:00:00"
+  },
+  {
+    "id": "prod_11",
+    "name": "South Shore Sunrise Longboard Session",
+    "price": 200.00,
+    "description": "Dedicated dawn patrol drone capture package focused on long-period wave alignments.",
+    "created_at": "2026-11-08 06:00:00"
+  },
+  {
+    "id": "prod_12",
+    "name": "Sunset Cliffs Aerial Video Archive Pass",
+    "price": 175.00,
+    "description": "Full digital access pass to high-definition historical drone captures and wave logs.",
+    "created_at": "2026-11-09 16:00:00"
   }
 ]

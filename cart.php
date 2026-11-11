@@ -1,18 +1,14 @@
 <?php
 // cart.php
-// Manages shopping cart
-
 session_start();
 
 $dataFile = 'data/products.json';
 $products = file_exists($dataFile) ? json_decode(file_get_contents($dataFile), true) : [];
 
-
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
 
-// form submissions
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'] ?? '';
     $id = $_POST['id'] ?? '';
@@ -38,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
-// cart display list
 $cartItems = [];
 $total = 0;
 foreach ($_SESSION['cart'] as $id => $qty) {
@@ -61,7 +56,7 @@ foreach ($_SESSION['cart'] as $id => $qty) {
 <head>
     <meta charset="UTF-8">
     <title>Your Cart - Peak Lineup</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
