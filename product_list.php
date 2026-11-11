@@ -1,6 +1,7 @@
-<?php
+<<?php
 // product_list.php
-$dataFile = 'data/products.json';$products = file_exists($dataFile) ? json_decode(file_get_contents($dataFile), true) : [];
+$dataFile = 'data/products.json';
+$products = file_exists($dataFile) ? json_decode(file_get_contents($dataFile), true) : [];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,7 +76,7 @@ $dataFile = 'data/products.json';$products = file_exists($dataFile) ? json_decod
             <?php if (empty($products)): ?>
                 <p class="col-span-full text-center text-gray-500 py-12">No products available at the moment.</p>
             <?php else: ?>
-                <?php foreach ($products as$product): ?>
+                <?php foreach ($products as $product): ?>
                     <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-md transition-shadow">
                         <div>
                             <?php if (!empty($product['image'])): ?>
