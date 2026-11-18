@@ -80,7 +80,7 @@ $products = file_exists($dataFile) ? json_decode(file_get_contents($dataFile), t
                     <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-md transition-shadow">
                         <div>
                             <?php if (!empty($product['image'])): ?>
-                                <div class="w-full h-48 bg-gray-100 overflow-hidden flex items-center justify-center p-4">
+                                <div class="w-full h-48 bg-white overflow-hidden flex items-center justify-center p-4">
                                     <img src="<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['name']) ?>" class="w-full h-full object-contain">
                                 </div>
                             <?php endif; ?>
