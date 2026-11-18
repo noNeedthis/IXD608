@@ -50,10 +50,13 @@
                 </span>
             </a>
 
-            <!-- Desktop 4 Main Tabs -->
+            <!-- Desktop 4 Main Tabs (Including Store) -->
             <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
                 <a href="index.html" class="px-4 py-2 rounded-full text-sm font-semibold bg-gray-900 text-white transition-all shadow-sm">
                     Filming
+                </a>
+                <a href="product_list.php" class="px-4 py-2 rounded-full text-sm font-semibold text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all">
+                    Store
                 </a>
                 <a href="#" class="px-4 py-2 rounded-full text-sm font-semibold text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all">
                     Upload
@@ -66,11 +69,18 @@
                 </a>
             </nav>
 
-            <!-- Mobile Menu Toggle Button -->
-            <div class="md:hidden">
-                <button id="mobile-menu-btn" class="p-2 text-gray-600 hover:text-gray-900 focus:outline-none">
-                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
-                </button>
+            <div class="flex items-center gap-4">
+                <!-- Cart Icon Button -->
+                <a href="cart.php" class="relative p-2.5 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-900 transition-colors">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+
+                <!-- Mobile Menu Toggle Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -78,6 +88,9 @@
         <div id="mobile-menu" class="hidden md:hidden border-b border-gray-100 bg-white px-4 pt-2 pb-4 space-y-2">
             <a href="index.html" class="block px-4 py-2.5 rounded-xl text-base font-semibold bg-gray-900 text-white">
                 Filming
+            </a>
+            <a href="product_list.php" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-gray-600 hover:bg-gray-100">
+                Store
             </a>
             <a href="#" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-gray-600 hover:bg-gray-100">
                 Upload
