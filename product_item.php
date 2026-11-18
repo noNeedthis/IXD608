@@ -70,8 +70,8 @@ if (!$product) {
 
         <div class="bg-white rounded-2xl p-6 sm:p-10 border border-gray-200 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <?php if (!empty($product['image'])): ?>
-                <div class="w-full h-80 bg-gray-100 rounded-xl overflow-hidden border border-gray-100">
-                    <img src="<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['name']) ?>" class="w-full h-full object-cover">
+                <div class="w-full h-80 bg-white rounded-xl overflow-hidden border border-gray-100 flex items-center justify-center p-4">
+                    <img src="<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['name']) ?>" class="w-full h-full object-contain">
                 </div>
             <?php endif; ?>
 
